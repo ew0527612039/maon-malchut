@@ -44,14 +44,18 @@ footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 @media(max-width:520px){.grid3{grid-template-columns:1fr}body{font-size:17px}}</style>
 </head>
 <body>
+<div id="load" aria-hidden="true"><img src="https://media.base44.com/images/public/user_6a7779c5b6a7cd1ba776be58/9565fc9b7_.png" alt=""><span></span></div>
 <iframe id="site" title="מעון מלכות" allow="clipboard-write"></iframe>
 <div id="seo"><h1>מעון מלכות – מעון יום לגילאי 3 חודשים עד 3 שנים</h1>
 <p>מעון מלכות – מעון יום ברוח התורה לגילאי 3 חודשים עד 3 שנים באחיסמך, עפולה ומודיעין עילית. מטפלת לכל 5 ילדים, אוכל ביתי כשר למהדרין, הרשמה מקוונת ואזור הורים.</p><ul><li><a href="/achisamach">מעון יום באחיסמך</a></li><li><a href="/afula">מעון יום בעפולה</a></li><li><a href="/modiin-illit">מעון יום במודיעין עילית</a></li></ul>
 <p><a href="/?v=register">להרשמה</a> · <a href="/?v=portal">אזור הורים</a> · טלפון 052-7639744</p></div>
-<style>html,body{height:100%}#site{position:fixed;inset:0;width:100%;height:100%;border:0;background:var(--bg);z-index:2}#seo{padding:20px}</style>
+<style>html,body{height:100%}#site{position:fixed;inset:0;width:100%;height:100%;border:0;background:var(--bg);z-index:2}#seo{padding:20px}#load{position:fixed;inset:0;z-index:3;display:grid;place-content:center;justify-items:center;gap:22px;background:radial-gradient(60% 50% at 50% 45%,#fff,#FFF3F6 60%,#FBE1E7);transition:opacity .6s}#load img{width:min(40vw,190px);animation:lp 2.4s ease-in-out infinite}#load span{width:44px;height:44px;border-radius:50%;border:4px solid #FBE1E7;border-top-color:#E0668E;animation:ls 1s linear infinite}#load.done{opacity:0;pointer-events:none}@keyframes lp{50%{transform:scale(1.05)}}@keyframes ls{to{transform:rotate(360deg)}}</style>
 <script>
 // כתובת האתר מ"ניהול פריסות" (מסתיימת ב-exec). אם הכתובת משתנה, מחליפים רק את השורה הזו.
 var SITE = "https://script.google.com/macros/s/AKfycbzN8kRb5AqL9jVO3KXxufXUAealbYciBVcw0hlXs8bGE3PKwlZe7H-OT8xCnvT9G8fX/exec";
-document.getElementById("site").src = SITE + location.search;
+var fr = document.getElementById("site"), ld = document.getElementById("load");
+fr.addEventListener("load", function(){ ld.classList.add("done"); setTimeout(function(){ ld.remove(); }, 700); });
+setTimeout(function(){ ld.classList.add("done"); }, 20000);
+fr.src = SITE + location.search;
 </script>
 </body></html>
